@@ -45,7 +45,7 @@ try:
 except ImportError:
     pass
 else:
-    add_introspection_rules([], ["^nosj.fields\.JSONField"])
+    add_introspection_rules([], ["^nosj\.fields\.JSONField"])
 
 
 class PickledObject(str):
