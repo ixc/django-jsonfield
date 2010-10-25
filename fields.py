@@ -40,6 +40,14 @@ class JSONField(models.TextField):
         return super(JSONField, self).get_db_prep_save(value)
 
 
+try:
+    from south.modelsinspector import add_introspection_rules
+except ImportError:
+    pass
+else:
+    add_introspection_rules([], ["^nosj.fields\.JSONField"])
+
+
 class PickledObject(str):
     """A subclass of string so it can be told whether a string is
        a pickled object or not (if the object is an instance of this class
